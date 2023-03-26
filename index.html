@@ -9,16 +9,16 @@
     <h3>click the button to check the status of your loved one</h3>
 
       <button onclick="checkLastAlive()">Check Last Alive</button>
-      <div id="messageDiv"></div>
+      <div id="messageDiv"></div><br>
       
 
 
-      <button onclick="provider.send('eth_requestAccounts', []).then(() => {
+	  <button onclick="provider.send('eth_requestAccounts', []).then(() => {
 		provider.listAccounts().then((accounts) => {
 		  signer = provider.getSigner(accounts[0]);
 		  document.getElementById('wallet-address').innerHTML = accounts[0];
 		});
-	  });">owner address</button>
+	  });">current user</button>
 	  <div id="wallet-address"></div>
 
 
@@ -27,7 +27,7 @@
 
     <style>
         body {
-             background-color: deepskyblue;
+             background-color: burlywood;
              font-size:35px;
              text-align: center;
             }
@@ -43,7 +43,7 @@
 
       <script> // Initialize web3
        var provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
-var contractAddress = "0x2911DAE5d317f5e406386Ef0A4C73D65DDeA9470";
+var contractAddress = "0xCA24c7a01095A698Ae3679F5c78e9e656F18f170";
 var abi = 
 [
 	{
